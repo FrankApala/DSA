@@ -1,7 +1,8 @@
 *.exe
 *.o
-
+*.elf
 # Optionally ignore build folders
 .vscode/
 /build/
 /Debug/
+
