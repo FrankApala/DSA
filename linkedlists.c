@@ -16,12 +16,14 @@ struct node* create_node(int data){
     return head;
 }
 
-void traverse_list(struct node* head){
-    while(head != NULL){
-        printf("%d, \n",head->data);
-        head=head->next;
+void traverse_list(struct node* head) {
+    struct node* temp = head;
+    while(temp != NULL){
+        printf("%d\n", temp->data);
+        temp = temp->next;
     }
 }
+
 
 int search(struct node* head,int val){
     struct node* curr=head;
@@ -58,19 +60,24 @@ struct node* insert_first(struct node* head, int data){
     return new;
 }
 
-struct node* insert_first(struct node* head, int data){
+//insert node in last position
+struct node* insert_last(struct node* head, int data){
     struct node* new=create_node(data);
+     if(head=NULL){
+        return new;
+     }
 
-    while(head != NULL){
-        head= head->next;
-
-        if(head->next==NULL){
-           head->next=new;   
-        }
+    struct node* temp=head;
+    while(temp->next != NULL){
+        temp= temp->next;
     }
+
+    temp->next=new;
+
      return head;
  }
 
+ 
 int main(){
 
     struct node* p=create_node(5);
