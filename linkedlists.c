@@ -28,13 +28,13 @@ int search(struct node* head,int val){
 
     while(curr != NULL){
         if(curr->data == val){
-        printf("found");
+        printf("found\n");
         return true;}
         else{
             curr=curr->next;
         }
     }
-    printf("not found");
+    printf("not found\n");
     return false;
 
 }
@@ -50,6 +50,27 @@ int length(struct node* head){
     return cnt;
 }
 
+//insert node at first position
+struct node* insert_first(struct node* head, int data){
+   struct node* new=create_node(data);
+    new->next=head;
+    
+    return new;
+}
+
+struct node* insert_first(struct node* head, int data){
+    struct node* new=create_node(data);
+
+    while(head != NULL){
+        head= head->next;
+
+        if(head->next==NULL){
+           head->next=new;   
+        }
+    }
+     return head;
+ }
+
 int main(){
 
     struct node* p=create_node(5);
@@ -64,15 +85,21 @@ int main(){
 
 
     traverse_list(p);
+
     printf("enter the value\n");
     scanf("%d",&value);
     search(p,value);
 
-   free(p->next->next->next);
+    
+
+    traverse_list(insert_first(p,2));
+    
+
+  /* free(p->next->next->next);
    free(p->next->next);
    free(p->next);
    free(p);
-
+*/
   
 /*printf("Data: %d\n", p->data);
 printf("Next: %p\n", p->next);*/
