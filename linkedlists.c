@@ -85,13 +85,19 @@ struct node* insert_last(struct node* head, int data){
             }
             if(pos==1){
                 new->next=head;
+                return new;
             }
-    for(int i=0;i<(pos-1);i++){
+    for(int i=1;i<(pos-1) && curr!= NULL;i++){
        curr= curr->next;
     }
-        new->next=curr
 
-
+    if (curr == NULL) 
+    return head;
+    
+        new->next=curr->next;     
+        curr->next=new;
+               
+   return head;
  }
 
 int main(){
@@ -114,8 +120,8 @@ int main(){
     search(p,value);
 
     
-
-    traverse_list(insert_first(p,2));
+    
+    traverse_list(insert_any_position(p,3,8));
     
 
   /* free(p->next->next->next);
