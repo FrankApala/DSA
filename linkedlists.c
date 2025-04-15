@@ -89,7 +89,7 @@ struct node* insert_last(struct node* head, int data){
     for(int i=0;i<(pos-1);i++){
        curr= curr->next;
     }
-        new->next=curr;
+        new->next=curr
 
 
  }
