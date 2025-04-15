@@ -77,7 +77,23 @@ struct node* insert_last(struct node* head, int data){
      return head;
  }
 
- 
+ struct node* insert_any_position(struct node* head,int pos, int data){
+    struct node* new=create_node(data);
+    struct node* curr=head;
+            if(pos<0){
+                return head;
+            }
+            if(pos==1){
+                new->next=head;
+            }
+    for(int i=0;i<(pos-1);i++){
+       curr= curr->next;
+    }
+        new->next=curr;
+
+
+ }
+
 int main(){
 
     struct node* p=create_node(5);
