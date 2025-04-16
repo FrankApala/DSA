@@ -93,13 +93,34 @@ struct node* insert_last(struct node* head, int data){
 
     if (curr == NULL) 
     return head;
-    
+
         new->next=curr->next;     
         curr->next=new;
                
    return head;
  }
 
+ struct node * delete_first(struct node* head){
+    struct node* curr=head;
+    head=head->next;
+      
+    free(curr);
+
+    return head;
+
+ }
+
+ struct node *delete_last(struct node* head){
+    struct node* curr=head;
+    while(curr->next->next !=NULL){
+        curr=curr->next;
+    }
+     free(curr->next);
+     curr->next=NULL;
+     return head;
+ }
+
+ 
 int main(){
 
     struct node* p=create_node(5);
