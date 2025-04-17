@@ -47,6 +47,13 @@ public:
         return cnt;
     }
 
+ static node* insert_first(node* head,int data){
+    node* newnode=new node(data);
+    newnode->next=head;
+
+    return newnode;
+  }
+
     
 };
 

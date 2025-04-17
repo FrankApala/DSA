@@ -111,7 +111,12 @@ struct node* insert_last(struct node* head, int data){
  }
 
  struct node *delete_last(struct node* head){
+    if(head==NULL)
+    return NULL;
+
+     
     struct node* curr=head;
+
     while(curr->next->next !=NULL){
         curr=curr->next;
     }
@@ -120,7 +125,15 @@ struct node* insert_last(struct node* head, int data){
      return head;
  }
 
- 
+ struct node *delete_any_postion(struct node* head,int pos){
+    if
+    struct node* curr=head;
+
+    
+ }
+
+
+
 int main(){
 
     struct node* p=create_node(5);
