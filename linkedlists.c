@@ -125,11 +125,31 @@ struct node* insert_last(struct node* head, int data){
      return head;
  }
 
- struct node *delete_any_postion(struct node* head,int pos){
-    if
+ struct node *delete_any_postion(struct node* head,int pos,int data){
     struct node* curr=head;
+    struct node* temp=NULL;
+    if(head==NULL || pos<1){
+    return head;}
 
-    
+    if(pos==1){
+       curr=head;
+       head=head->next;
+       free (curr);
+       return head;
+    }
+
+    for(int i=1;i<(pos-1) && curr!= NULL;i++){
+        curr=curr->next;
+    }
+
+    if(curr->next==NULL || curr==NULL){
+        return head;
+    }
+      temp=curr->next;
+      curr->next=curr->next->next;
+      free(temp);
+
+    return head;    
  }
 
 

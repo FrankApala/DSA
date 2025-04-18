@@ -47,17 +47,17 @@ public:
         return cnt;
     }
 
- static node* insert_first(node* head,int data){
+ static node* insert_first(node* head,int data);
+
+    
+};
+
+static node* insert_first(node* head,int data){
     node* newnode=new node(data);
     newnode->next=head;
 
     return newnode;
   }
-
-    
-};
-
-
 
 int main(void){
  int value;
