@@ -142,7 +142,7 @@ struct node* insert_last(struct node* head, int data){
         curr=curr->next;
     }
 
-    if(curr->next==NULL || curr==NULL){
+    if(curr==NULL || curr->next==NULL){
         return head;
     }
       temp=curr->next;
