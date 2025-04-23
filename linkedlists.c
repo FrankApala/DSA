@@ -178,11 +178,11 @@ int main(){
     traverse_list(insert_any_position(p,3,8));
     
 
-  /* free(p->next->next->next);
+  free(p->next->next->next);
    free(p->next->next);
    free(p->next);
    free(p);
-*/
+
   
 /*printf("Data: %d\n", p->data);
 printf("Next: %p\n", p->next);*/
